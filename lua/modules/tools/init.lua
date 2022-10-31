@@ -1,5 +1,0 @@
-require "modules.tools.impatient"
-require "modules.tools.comment"
-require "modules.tools.plugins"
-require "modules.tools.project"
-require "modules.tools.toggleterm"

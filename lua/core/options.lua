@@ -42,6 +42,10 @@ local options = {
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.Illuminate_ftblacklist = { "alpha", "NvimTree", "DressingSelect", "harpoon" }
+vim.g.gist_open_browser_after_post = 1
+vim.g.gitblame_enabled = 0
+vim.g.gitblame_message_template = "<summary> • <date> • <author>"
+vim.g.gitblame_highlight_group = "LineNr"
 
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append "c"
