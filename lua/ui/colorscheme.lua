@@ -1,13 +1,17 @@
 -- local colorscheme = "darkplus"
 local colorscheme = "catppuccin"
+local palette = "frappe"
+
+local cp = require("catppuccin.palettes").get_palette (palette)
 
 require("catppuccin").setup {
-  flavour = "frappe", -- mocha, macchiato, frappe, latte
+  flavour = palette, -- mocha, macchiato, frappe, latte
   integrations = {
     navic = {
       enabled = true,
-    }
-  }
+      custom_bg = cp.mantle
+    },
+  },
 }
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

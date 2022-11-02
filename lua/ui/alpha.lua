@@ -33,6 +33,7 @@ dashboard.section.buttons.val = {
   button("u", icons.ui.CloudDownload .. " Update", ":PackerSync<CR>"),
   button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
 }
+
 local function footer()
   -- NOTE: requires the fortune-mod package to work
   -- local handle = io.popen("fortune")

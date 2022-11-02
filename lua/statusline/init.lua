@@ -1,2 +1,3 @@
 require "statusline.navic"
-require "statusline.heirline"
+require "statusline.lualine"
+-- require "statusline.heirline"

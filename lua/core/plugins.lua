@@ -100,7 +100,6 @@ return packer.startup(function(use)
 
   -- Statusline
   use "nvim-lualine/lualine.nvim"
-  use "rebelot/heirline.nvim"
 
   -- Syntax/Treesitter
   use "nvim-treesitter/nvim-treesitter"
@@ -121,7 +120,7 @@ return packer.startup(function(use)
   -- Lua Development
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "nvim-lua/popup.nvim"
-  use "folke/neodev.nvim"
+  -- use "folke/neodev.nvim"
 
   -- Snippet
   use "L3MON4D3/LuaSnip" --snippet engine

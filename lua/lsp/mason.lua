@@ -14,6 +14,7 @@ local servers = {
   "emmet_ls",
   "html",
   "jsonls",
+  "gopls",
   "sumneko_lua",
   "tflint",
   "tsserver",
@@ -31,7 +32,7 @@ local settings = {
     icons = {
       package_installed = "✓",
       package_pending = "➜",
-      package_uninstalled = "✗"
+      package_uninstalled = "✗",
     },
   },
   log_level = vim.log.levels.INFO,
@@ -59,18 +60,9 @@ for _, server in pairs(servers) do
   }
 
   if server == "sumneko_lua" then
-    local l_status_ok, neo_dev = pcall(require, "neodev")
-    if not l_status_ok then
-      return
-    end
-    -- local sumneko_opts = require "user.lsp.settings.sumneko_lua"
-    -- opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
-    -- opts = vim.tbl_deep_extend("force", require("lua-dev").setup(), opts)
-    neo_dev.setup()
+    local lua_opts = require "lsp.server_settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", lua_opts, opts)
   end
 
   lspconfig[server].setup(opts)
 end
-
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}
