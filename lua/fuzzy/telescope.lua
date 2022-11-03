@@ -9,7 +9,6 @@ local icons = require "ui.icons"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -147,7 +146,6 @@ telescope.setup {
     },
   },
   pickers = {
-
     live_grep = {
       theme = "dropdown",
     },
@@ -186,8 +184,6 @@ telescope.setup {
       theme = "dropdown",
       initial_mode = "normal",
     },
-
-
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -197,6 +193,12 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
     media_files = {
       -- filetypes whitelist
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
@@ -225,3 +227,4 @@ telescope.setup {
 }
 
 require("telescope").load_extension "file_browser"
+require("telescope").load_extension "fzf"

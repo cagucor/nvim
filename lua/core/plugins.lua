@@ -57,14 +57,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  -- use { "tzachar/cmp-tabnine", commit = "1a8fd2795e4317fd564da269cc64a2fa17ee854e",
-  -- run = "./install.sh" }
+  use { "tzachar/cmp-tabnine", run = "./install.sh" }
 
   -- Debugging
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   -- use "theHamsta/nvim-dap-virtual-text"
-  -- use "Pocco81/DAPInstall.nvim"
 
   -- File System
   use "kyazdani42/nvim-tree.lua"
@@ -74,14 +72,11 @@ return packer.startup(function(use)
   -- Fuzzy Finder/Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "f-person/git-blame.nvim"
-  use "ruifm/gitlinker.nvim"
-  use "mattn/vim-gist"
-  use "mattn/webapi-vim"
   use "pwntester/octo.nvim"
 
   -- LSP
@@ -90,24 +85,21 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "ray-x/lsp_signature.nvim"
-  use "SmiteshP/nvim-navic"
   use "simrat39/symbols-outline.nvim"
   use "b0o/SchemaStore.nvim"
   use "RRethy/vim-illuminate"
   use "j-hui/fidget.nvim"
   use "lvimuser/lsp-inlayhints.nvim"
-  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
   -- Statusline
   use "nvim-lualine/lualine.nvim"
+  use "SmiteshP/nvim-navic"
 
   -- Syntax/Treesitter
   use "nvim-treesitter/nvim-treesitter"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- embedded files
+  use "p00f/nvim-ts-rainbow" -- parentheses
   use "windwp/nvim-ts-autotag"
-  use "nvim-treesitter/nvim-treesitter-textobjects"
   use "kylechui/nvim-surround"
   use {
     "abecodes/tabout.nvim",
@@ -120,23 +112,14 @@ return packer.startup(function(use)
   -- Lua Development
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "nvim-lua/popup.nvim"
-  -- use "folke/neodev.nvim"
 
   -- Snippet
   use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-  -- Marks
-  use "christianchiarulli/harpoon"
-  use "MattesGroeger/vim-bookmarks"
 
   -- UI
   use "kyazdani42/nvim-web-devicons"
   use "NvChad/nvim-colorizer.lua"
-  use "nvim-colortils/colortils.nvim"
   use "lunarvim/onedarker.nvim"
-  use "lunarvim/darkplus.nvim"
-  use "folke/tokyonight.nvim"
   use "catppuccin/nvim"
 
   -- Utility
@@ -145,7 +128,6 @@ return packer.startup(function(use)
   use "ghillb/cybu.nvim"
   use "moll/vim-bbye"
   use "lewis6991/impatient.nvim"
-  use "lalitmee/browse.nvim"
 
   -- Registers
   -- use "tversteeg/registers.nvim"
@@ -164,7 +146,6 @@ return packer.startup(function(use)
 
   -- Project
   use "ahmedkhalf/project.nvim"
-  use "windwp/nvim-spectre"
 
   -- Session
   use "rmagatti/auto-session"
@@ -183,7 +164,6 @@ return packer.startup(function(use)
   -- Editing Support
   use "windwp/nvim-autopairs"
   use "monaqa/dial.nvim"
-  use "nacro90/numb.nvim"
   use "karb94/neoscroll.nvim"
   use "junegunn/vim-slash"
 
@@ -199,6 +179,9 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   }
+
+  --Nots
+  use "jbyuki/nabla.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
