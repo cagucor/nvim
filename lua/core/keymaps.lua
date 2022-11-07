@@ -38,12 +38,15 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
+-- Toggle spell check
+keymap("n", "<leader>st", "<cmd>setlocal spell! spelllang=en_nz<CR>")
+
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -67,7 +70,7 @@ keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.curren
 keymap("x", "<leader>/", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 -- Nable
-keymap("i", "<leader>p", "<cmd>lua require('nabla').popup()<CR> ", opts) -- Customize with popup({border = ...})  : `single` (default), `double`, `rounded`
+keymap("n", "<leader>p", "<cmd>lua require('nabla').popup()<CR> ", opts) -- Customize with popup({border = ...})  : `single` (default), `double`, `rounded`
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)

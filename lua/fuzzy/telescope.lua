@@ -87,7 +87,7 @@ telescope.setup {
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<c-d>"] = require("telescope.actions").delete_buffer,
+        ["<c-d>"] = actions.delete_buffer,
 
         -- ["<C-u>"] = actions.preview_scrolling_up,
         -- ["<C-d>"] = actions.preview_scrolling_down,
@@ -125,7 +125,7 @@ telescope.setup {
         ["M"] = actions.move_to_middle,
         ["L"] = actions.move_to_bottom,
         ["q"] = actions.close,
-        ["dd"] = require("telescope.actions").delete_buffer,
+        ["dd"] = actions.delete_buffer,
         ["s"] = actions.select_horizontal,
         ["v"] = actions.select_vertical,
         ["t"] = actions.select_tab,
@@ -166,7 +166,7 @@ telescope.setup {
       show_moon = true,
     },
     colorscheme = {
-      -- enable_preview = true,
+      enable_preview = true,
     },
     lsp_references = {
       theme = "dropdown",
@@ -184,13 +184,6 @@ telescope.setup {
       theme = "dropdown",
       initial_mode = "normal",
     },
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
   extensions = {
     fzf = {

@@ -134,6 +134,12 @@ M.Filetype = {
 
 M.Filename = {
   "filename",
+  symbols = {
+    modified = icons.ui.Circle, -- Text to show when the file is modified.
+    readonly = icons.ui.Lock, -- Text to show when the file is non-modifiable or readonly.
+    unnamed = icons.ui.Pencil, -- Text to show for unnamed buffers.
+    newfile = icons.ui.NewFile, -- Text to show for new created file before first writting
+  },
   padding = { right = 1, left = 1 },
 }
 

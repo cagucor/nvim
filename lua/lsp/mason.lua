@@ -16,6 +16,7 @@ local servers = {
   "jsonls",
   "gopls",
   "sumneko_lua",
+  "tailwindcss",
   "tflint",
   "tsserver",
   "pyright",

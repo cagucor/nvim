@@ -52,4 +52,4 @@ configs.setup {
     },
     disable = { "html" },
   },
-  textobje}
+}

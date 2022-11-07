@@ -12,8 +12,11 @@ lualine.setup {
     theme = "catppuccin",
     component_separators = "",
     section_separators = { left = "", right = "" },
-    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "lir" },
-    always_divide_middle = true,
+    disabled_filetypes = {
+      statusline = { "alpha", "dashboard", "lir" },
+      winbar = { "alpha", "dashboard", "lir", "toggleterm", "NvimTree" },
+      always_divide_middle = true,
+    },
   },
   sections = {
     lualine_a = { components.Vimode, components.Branch },
