@@ -57,17 +57,25 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use { "tzachar/cmp-tabnine", run = "./install.sh" }
 
   -- Debugging
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
+  use "jayp0521/mason-nvim-dap.nvim"
   -- use "theHamsta/nvim-dap-virtual-text"
 
   -- File System
-  use "kyazdani42/nvim-tree.lua"
+  -- use "kyazdani42/nvim-tree.lua"
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  }
   use { "nvim-telescope/telescope-file-browser.nvim" }
-  use "tamago324/lir.nvim"
 
   -- Fuzzy Finder/Telescope
   use "nvim-telescope/telescope.nvim"
@@ -80,10 +88,16 @@ return packer.startup(function(use)
   use "pwntester/octo.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
+  use "neovim/nvim-lspconfig"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {}
+    end,
+  }
   use "ray-x/lsp_signature.nvim"
   use "simrat39/symbols-outline.nvim"
   use "b0o/SchemaStore.nvim"

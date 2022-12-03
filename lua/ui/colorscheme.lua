@@ -11,6 +11,7 @@ require("catppuccin").setup {
       enabled = true,
       custom_bg = cp.mantle
     },
+    neotree = true,
   },
 }
 

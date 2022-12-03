@@ -46,6 +46,7 @@ mason_lspconfig.setup {
   ensure_installed = servers,
   automatic_installation = true,
 }
+table.insert(servers, "prolog_ls")
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -53,6 +54,7 @@ if not lspconfig_status_ok then
 end
 
 local opts = {}
+
 
 for _, server in pairs(servers) do
   opts = {

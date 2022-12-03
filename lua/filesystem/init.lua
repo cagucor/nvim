@@ -1,2 +1,1 @@
-require "filesystem.lir"
-require "filesystem.nvim-tree"
+require "filesystem.neo-tree"
