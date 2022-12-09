@@ -17,6 +17,6 @@ null_ls.setup {
     formatting.black,
     formatting.stylua,
     formatting.rustfmt,
-    diagnostics.flake8,
+    diagnostics.ruff,
   },
 }

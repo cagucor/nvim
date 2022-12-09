@@ -129,6 +129,7 @@ return packer.startup(function(use)
 
   -- Snippet
   use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets"
 
   -- UI
   use "kyazdani42/nvim-web-devicons"
