@@ -1,8 +1,9 @@
-require "core.options"
-require "core.keymaps"
-require "core.autocmds"
+require('core.options')
+require('core.keymaps')
+require('core.autocmds')
+require('core.lsp')
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
@@ -11,10 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-require("lazy").setup({
+require('lazy').setup({
   spec = {
     -- import/override with your plugins
-    { import = "plugins" },
+    { import = 'plugins' },
   },
   defaults = {
     lazy = false,
@@ -28,22 +29,22 @@ require("lazy").setup({
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
-        "gzip",
+        'gzip',
         -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
       },
     },
   },
 })
 
-local colorscheme = "catppuccin-macchiato"
+local colorscheme = 'catppuccin-macchiato'
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
 if not status_ok then
   -- vim.notify("colorscheme " .. colorscheme .. " not found!")
   return

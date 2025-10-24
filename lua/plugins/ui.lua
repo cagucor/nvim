@@ -4,6 +4,7 @@ return {
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
     opts = function()
+      local navic = require('nvim-navic')
       return {
         options = {
           theme = 'auto',
@@ -15,6 +16,8 @@ return {
           refresh = {
             winbar = 1000,
           },
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
         },
         sections = {
           lualine_a = { 'mode' },
@@ -26,20 +29,25 @@ return {
           },
           lualine_x = {
             {
-              function()
-                local msg = 'No Active Lsp'
-                local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-                local buf_client_names = {}
-                if next(clients) == nil then
-                  return msg
-                end
-                for _, client in pairs(clients) do
-                  table.insert(buf_client_names, client.name)
-                end
-                return table.concat(buf_client_names, ', ')
-              end,
+              'lsp_status',
               icon = ' ',
-              color = { fg = '#ffffff', gui = 'bold' },
+              symbols = {
+                -- Standard unicode symbols to cycle through for LSP progress:
+                spinner = {
+                  '⠋',
+                  '⠙',
+                  '⠹',
+                  '⠸',
+                  '⠼',
+                  '⠴',
+                  '⠦',
+                  '⠧',
+                  '⠇',
+                  '⠏',
+                },
+                -- Delimiter inserted between LSP names:
+                separator = ' ',
+              },
             },
 						-- stylua: ignore
 						{
@@ -64,11 +72,6 @@ return {
             },
             { 'location', padding = { left = 0, right = 1 } },
           },
-          lualine_z = {
-            function()
-              return ' ' .. os.date('%R')
-            end,
-          },
         },
         winbar = {
           lualine_c = {
@@ -80,9 +83,8 @@ return {
             },
             {
               'filename',
-              separator = '>',
+              -- separator = '>',
             },
-        -- stylua: ignore
             {
               'navic',
               color_correction = 'static',
@@ -100,12 +102,12 @@ return {
     end,
   },
   -- notifications
-  {
-    'rcarriga/nvim-notify',
-    opts = {
-      background_colour = '#000000',
-    },
-  },
+  -- {
+  --   'rcarriga/nvim-notify',
+  --   opts = {
+  --     render = "minimal"
+  --   },
+  -- },
   -- lazy.nvim
   {
     'folke/noice.nvim',
@@ -207,11 +209,5 @@ return {
       })
     end,
   },
-
-  -- latex
-  {
-    'lervag/vimtex',
-  },
-
   { 'MunifTanjim/nui.nvim', lazy = true },
 }

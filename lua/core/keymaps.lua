@@ -17,6 +17,13 @@ keymap('n', '<leader>st', '<cmd>setlocal spell! spelllang=en_nz<CR>')
 -- File system
 keymap('n', '<leader>e', ':Neotree toggle<CR>', opts)
 
+-- Fuzzy Search
+keymap('n', '<leader>ft', '<cmd>Telescope live_grep<CR>')
+keymap('n', '<leader>ff', '<cmd>Telescope fd<CR>')
+keymap('n', '<leader>fb', '<cmd>Telescope buffers initial_mode=normal sort_mru=true theme=ivy<CR>')
+
+-- Completion
+
 -- Terminals
 keymap(
   { 'n', 't', 'i' },
@@ -44,7 +51,7 @@ keymap('n', ']d', vim.diagnostic.goto_next)
 keymap('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Formatting
-keymap('n', '<space>lf', '<cmd>GuardFmt<CR>')
+keymap('n', '<leader>lf', '<cmd>lua require("conform").format()<CR>')
 
 -- Commenting
 keymap(
@@ -58,6 +65,9 @@ keymap(
   '<ESC><CMD>lua require(\'Comment.api\').toggle.linewise(vim.fn.visualmode())<CR>',
   opts
 )
+
+-- lsp 
+keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
 -- Dismiss the notifications
 keymap({ 'n', 'v' }, '<leader>d', '<cmd>lua require("notify").dismiss()<CR>')
